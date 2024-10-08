@@ -5,6 +5,10 @@ import { produtoAtualizacaoSchema, produtoSchema } from "./validacao.js";
 const app = express();
 app.use(express.json());
 
+app.get('/', (req, res) => {
+    res.redirect('/products');
+});
+
 app.get('/products', (req, res) => {
     const products = lerProdutos();
     res.status(200).send(products)
