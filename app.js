@@ -73,4 +73,5 @@ app.delete('/products/:id', (req, res) => {
     res.send(removedProduct);
 })
 
-app.listen(2800, ()=> console.log('Servidor Rodando com sucesso'));
+const port = process.env.PORT || 2800;
+app.listen(port, () => console.log(`Servidor rodando na porta ${port}`));
